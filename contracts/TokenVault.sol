@@ -6,10 +6,11 @@
 
 pragma solidity ^0.4.8;
 
-
 import "./Recoverable.sol";
 import "./SafeMathLib.sol";
+import "./StandardToken.sol";
 import "./StandardTokenExt.sol";
+
 import "zeppelin/contracts/ownership/Ownable.sol";
 
 /**

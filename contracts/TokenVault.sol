@@ -9,6 +9,8 @@ pragma solidity ^0.4.8;
 import "./Recoverable.sol";
 import "./SafeMathLib.sol";
 import "./StandardToken.sol";
+import "./StandardTokenExt.sol";
+
 import "zeppelin/contracts/ownership/Ownable.sol";
 
 /**
@@ -55,7 +57,7 @@ contract TokenVault is Ownable, Recoverable {
   uint public lockedAt;
 
   /** We can also define our own token, which will override the ICO one ***/
-  StandardToken public token;
+  StandardTokenExt public token;
 
   /** What is our current state.
    *
@@ -82,7 +84,7 @@ contract TokenVault is Ownable, Recoverable {
    * @param _tokensToBeAllocated Total number of tokens this vault will hold - including decimal multiplcation
    *
    */
-  function TokenVault(address _owner, uint _freezeEndsAt, StandardToken _token, uint _tokensToBeAllocated) {
+  function TokenVault(address _owner, uint _freezeEndsAt, StandardTokenExt _token, uint _tokensToBeAllocated) {
 
     owner = _owner;
 

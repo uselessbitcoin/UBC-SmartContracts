@@ -1,4 +1,4 @@
-This package contains Ethereum smart contracts and commnd line toolchain for launching and managing token sales.
+This package contains Ethereum smart contracts and command line toolchain for launching and managing token sales.
 
 .. image:: https://badges.gitter.im/TokenMarketNet/ico.svg
    :alt: Join the chat at https://gitter.im/TokenMarketNet/ico
@@ -61,6 +61,10 @@ These contracts have been tested, audited and used by several projects. Below ar
 
 * ... and many more!
 
+We also have third party token sales using these smart contracts
+
+* `Dala <https://github.com/GetDala/dala-smart-contracts>`_
+
 Quick token sale walkthrough
 ============================
 
@@ -70,6 +74,10 @@ Features and design goals
 =========================
 
 * **Best practices**: Smart contracts are written with the modern best practices of Ethereum community
+
+* **KYC**: Know your customer processes are support enabled to minimize legal risks associated with anonymous payments - `see KYCCrowdsale <https://github.com/TokenMarketNet/ico/blob/master/contracts/KYCCrowdsale.sol>`_
+
+* **AML**: Anti-money laundering processes are supported through offloaded chain analysis - often a requirement to open a bank account - `see AMLToken <https://github.com/TokenMarketNet/ico/blob/master/contracts/AMLToken.sol>`_ 
 
 * **Separation of concerns**: Crowdsale, token and other logic lies in separate contracts that can be assembled together like lego bricks
 
@@ -81,7 +89,7 @@ Features and design goals
 
 * **Refund**: Built-in refund and minimum funding goal protect investors
 
-* **Migration**: Token holders can opt in to a new version of the token contract in the case the token owner wants to add more functionality to their token
+* **Token upgrade**: Token holders can opt in to a new version of the token contract in the case the token owner wants to add more functionality to their token
 
 * **Reissuance**: There can be multiple crowdsales for the same token (pre-ICO, ICO, etc.)
 
@@ -95,5 +103,12 @@ Support
 TokenMarket can be a launch and hosting partner for your token sale. We offer advisory, legal, technical and marketing services. For more information see `TokenMarket ICO services <https://tokenmarket.net/ico-professional-services>`_. TokenMarket requires everyone to have at least business plan or whitepaper draft ready before engaging into any discussions.
 
 Community support is available on the best effort basis - your mileage may vary. To get the most of the community support we expect you to be on a senior level of Solidity, Python and open source development. `Meet us at the Gitter support chat <https://gitter.im/TokenMarketNet/ico>`_.
+
+Audit reports
+=============
+
+* `Dala <https://www.iosiro.com/dala-token-sale-audit>`_ 
+
+* `Civic <https://medium.com/@ZeppelinOrg/a91754ab6e4b>`_ 
 
 

@@ -6,11 +6,11 @@
 
 pragma solidity ^0.4.8;
 
-import './StandardToken.sol';
+import "./StandardTokenExt.sol";
 
+contract BurnableToken is StandardTokenExt {
 
-contract BurnableToken is StandardToken {
-
+  // @notice An address for the transfer event where the burned tokens are transferred in a faux Transfer event
   address public constant BURN_ADDRESS = 0;
 
   /** How many tokens we burned */
@@ -22,8 +22,13 @@ contract BurnableToken is StandardToken {
    */
   function burn(uint burnAmount) {
     address burner = msg.sender;
-    balances[burner] = safeSub(balances[burner], burnAmount);
-    totalSupply = safeSub(totalSupply, burnAmount);
+    balances[burner] = balances[burner].sub(burnAmount);
+    totalSupply = totalSupply.sub(burnAmount);
     Burned(burner, burnAmount);
+
+    // Inform the blockchain explores that track the
+    // balances only by a transfer event that the balance in this
+    // address has decreased
+    Transfer(burner, BURN_ADDRESS, burnAmount);
   }
 }
